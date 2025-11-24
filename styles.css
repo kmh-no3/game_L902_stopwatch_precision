@@ -471,6 +471,13 @@ main.single-game-layout {
   border: 1px solid rgba(56, 189, 248, 0.2);
   font-size: 0.85rem;
   padding: 8px 16px;
+  color: #f8fafc;
+  font-weight: 500;
+}
+
+.focus-toggle strong {
+  color: var(--accent-strong);
+  font-weight: 700;
 }
 
 .stopwatch-area.focus-active .time-display {

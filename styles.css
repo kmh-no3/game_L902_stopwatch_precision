@@ -26,6 +26,7 @@ body {
   background: radial-gradient(circle at top, rgba(14, 165, 233, 0.18), transparent 45%),
     radial-gradient(circle at bottom, rgba(59, 130, 246, 0.12), transparent 35%),
     #020617;
+  overflow-x: hidden;
 }
 
 button {
@@ -662,15 +663,18 @@ dialog {
 
   .app-header h1 {
     font-size: 1.8rem;
+    line-height: 1.2;
   }
 
   .app-header p {
     font-size: 0.9rem;
+    margin-top: 6px;
   }
 
   .header-actions {
     width: 100%;
     flex-wrap: wrap;
+    gap: 8px;
   }
 
   .header-actions button,
@@ -678,7 +682,8 @@ dialog {
     flex: 1;
     min-width: 120px;
     font-size: 0.85rem;
-    padding: 8px 14px;
+    padding: 12px 16px;
+    min-height: 44px;
   }
 
   .game-surface,
@@ -847,7 +852,8 @@ dialog {
   .primary,
   .secondary {
     font-size: 0.9rem;
-    padding: 10px 16px;
+    padding: 12px 18px;
+    min-height: 44px;
   }
 
   .panel-head h3 {

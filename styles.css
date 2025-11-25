@@ -100,12 +100,16 @@ button:active {
 main.single-game-layout {
   max-width: 1180px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .playground {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr);
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
   gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .game-surface {
@@ -610,11 +614,32 @@ dialog {
 
   .playground {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .game-controls.reactive {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+@media (max-width: 900px) {
+  .playground {
+    gap: 14px;
+  }
+
+  .game-surface,
+  .info-panel {
+    padding: 20px;
+  }
+
+  .panel-head {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag-row {
+    width: 100%;
   }
 }
 
@@ -714,14 +739,24 @@ dialog {
 
   .ghost-summary {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 10px;
+    width: 100%;
+  }
+
+  .ghost-summary > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
   }
 
   .focus-toggle {
     width: 100%;
     font-size: 0.8rem;
     padding: 10px 14px;
+    box-sizing: border-box;
   }
 
   .game-controls {
@@ -814,26 +849,42 @@ dialog {
 
   .app-header h1 {
     font-size: 1.5rem;
+    word-break: break-word;
+  }
+
+  .app-header p {
+    font-size: 0.85rem;
+    word-break: break-word;
+  }
+
+  .playground {
+    gap: 12px;
   }
 
   .game-surface,
   .info-panel {
     padding: 12px;
     border-radius: 16px;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .game-area {
-    height: 280px;
+    height: auto;
+    min-height: 280px;
     padding: 16px;
+    gap: 12px;
   }
 
   .time-halo {
     width: 140px;
     height: 140px;
+    flex-shrink: 0;
   }
 
   .time-display {
     font-size: 1.8rem;
+    word-break: break-word;
   }
 
   .time-label,
@@ -843,10 +894,16 @@ dialog {
 
   .ghost-summary {
     font-size: 0.85rem;
+    width: 100%;
+  }
+
+  .ghost-summary > div {
+    flex-wrap: wrap;
   }
 
   .ghost-value {
     font-size: 1.1rem;
+    word-break: break-word;
   }
 
   .primary,
@@ -854,13 +911,74 @@ dialog {
     font-size: 0.9rem;
     padding: 12px 18px;
     min-height: 44px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .panel-head {
+    gap: 8px;
   }
 
   .panel-head h3 {
     font-size: 1.1rem;
+    word-break: break-word;
+  }
+
+  .score-row {
+    min-width: 0;
+    overflow: hidden;
   }
 
   .score-row strong {
     font-size: 1rem;
+    word-break: break-word;
+  }
+
+  .history-card {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .history-item {
+    min-width: 0;
+    word-break: break-word;
+  }
+
+  .target-tuner {
+    min-width: 0;
+  }
+
+  .target-tuner input[type="range"] {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    padding: 6px;
+  }
+
+  .app-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .game-surface,
+  .info-panel {
+    padding: 10px;
+  }
+
+  .game-area {
+    padding: 12px;
+    min-height: 260px;
+  }
+
+  .time-halo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .time-display {
+    font-size: 1.5rem;
   }
 }
